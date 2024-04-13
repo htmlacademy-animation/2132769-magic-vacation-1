@@ -133,6 +133,10 @@
   &:hover {
     opacity: 1;
     pointer-events: auto;
+
+    .social-block__link--fb {
+      opacity: 1;
+    }
   }
 
   &:focus-within {
@@ -211,6 +215,8 @@
   }
 
   &--fb {
+    opacity: 0;
+
     svg {
       width: 0.8rem;
       height: 1.7rem;
