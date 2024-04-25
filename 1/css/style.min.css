@@ -1449,9 +1449,9 @@ img {
 
 .form__field {
   flex: none;
-  padding: 0 5.6rem;
+  padding: 0;
   height: 6rem;
-  width: 100%;
+  width: 6rem;
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -1460,13 +1460,13 @@ img {
   border: 0;
   border-radius: 3rem;
   outline: none;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: all 1s ease;
+  opacity: 10%;
+  transition: opacity 1s ease, width 0.5s ease;
 }
 .active .form__field {
-  transform: translateX(0);
+  padding: 0 5.6rem;
   opacity: 1;
+  width: 100%;
 }
 .form__field:focus {
   border: 1px solid #a67ee5;
@@ -1507,6 +1507,7 @@ img {
   border-radius: 3rem;
   overflow: hidden;
   margin-right: 3rem;
+  text-align: right;
 }
 @media (min-width: 2000px) {
   .form__field-container {
@@ -1861,7 +1862,7 @@ img {
   line-height: 1.27;
   transform: translateY(10px);
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .active .intro__message {
   transform: translateY(-10px);
@@ -3700,13 +3701,14 @@ img {
   line-height: 2rem;
   transform: translateX(30px);
   opacity: 0;
-  transition: all 1s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .swiper-slide-active .slider__item-text {
   transform: translateX(-30px);
   opacity: 1;
 }
 .swiper-slide-next .slider__item-text {
+  transition: transform 0.5s ease, opacity 0.5s ease;
   transform: translateX(-30px);
   opacity: 1;
 }
@@ -3908,7 +3910,7 @@ img {
 }
 .social-block li {
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 @media (max-width: 1024px) and (orientation: portrait) {
   .social-block li {
@@ -3926,16 +3928,16 @@ img {
 }
 .social-block:hover li {
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 .social-block:hover li:nth-child(2) {
-  transition-delay: 0.2s;
+  transition-delay: 0.15s;
 }
 .social-block:hover li:nth-child(3) {
-  transition-delay: 0.4s;
+  transition-delay: 0.3s;
 }
 .social-block:hover li:nth-child(4) {
-  transition-delay: 0.6s;
+  transition-delay: 0.45s;
 }
 
 .social-block__toggler {
@@ -3977,7 +3979,7 @@ img {
   background-color: #ffffff;
   border: 2px solid #ffffff;
   z-index: -1;
-  transition: all 0.3s ease;
+  transition: width 0.3s ease, height 0.3s ease;
 }
 .social-block__toggler svg {
   position: absolute;
@@ -4026,7 +4028,7 @@ img {
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 @media (min-width: 2000px) {
   .social-block__list {
@@ -4108,7 +4110,7 @@ img {
   color: #ffffff;
   border: 2px solid transparent;
   border-radius: 50%;
-  transition: all 0.5s ease;
+  transition: color 0.3s ease;
 }
 @media (min-width: 2000px) {
   .social-block__link {
