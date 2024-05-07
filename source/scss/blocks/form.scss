@@ -42,8 +42,8 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
-  opacity: 10%;
-  transition: opacity 1s ease, width 0.5s ease;
+  opacity: 1;
+  transition: width 0.5s ease;
 
   .active & {
     padding: 0 5.6rem;
