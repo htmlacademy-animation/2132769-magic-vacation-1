@@ -1,10 +1,40 @@
 .social-block {
   position: relative;
 
+  li {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    @media (max-width: $tablet) and (orientation: portrait) {
+      opacity: 1;
+    }
+
+    @media (max-width: $mobile) and (orientation: landscape) {
+      opacity: 1;
+    }
+  }
+
   &:hover {
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
+    }
+
+    li {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+
+      &:nth-child(2) {
+        transition-delay: 0.15s;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+
+      &:nth-child(4) {
+        transition-delay: 0.45s;
+      }
     }
   }
 }
@@ -35,6 +65,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: width 0.3s ease, height 0.3s ease;
   }
 
   svg {
@@ -89,6 +120,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.3s ease;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -168,6 +200,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition: color 0.3s ease;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
