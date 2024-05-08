@@ -241,17 +241,21 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
-    transition: color 0.5s ease;
+    transition: color 0.3s ease;
+    overflow: hidden;
 
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
-      width: 0;
+      width: 100%;
       height: 2px;
       background-color: $c-light;
-      right: 0;
-      transition: all 0.5s ease;
+      z-index: 2;
+      opacity: 0;
+      left: 0;
+      transform-origin: left;
+      transform: scaleX(0);
 
       @media (max-width: $tablet) and (orientation: portrait) {
         right: 0;
@@ -270,7 +274,9 @@
       &::after {
         display: block;
         width: 100%;
-        transition: all 0.5s ease;
+        transform: translateX(0);
+        opacity: 1;
+        transition: opacity 0.3s ease;
       }
     }
 
@@ -278,14 +284,38 @@
     &:focus {
       color: $c-purple;
       outline: none;
-      transition: all 0.5s ease;
 
       &::after {
         opacity: 1;
         background-color: $c-purple;
-        width: 100%;
-        left: 0;
-        right: auto;
+        transform: scaleX(1);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $c-light;
+      opacity: 1;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.5s ease, opacity 0.3s ease;
+      background-color: $c-purple;
+    }
+
+    &:hover,
+    &:focus {
+      color: $c-purple;
+      outline: none;
+
+      &::before {
+        opacity: 0;
+        transform: scaleX(1);
+        transition: none;
       }
     }
   }
