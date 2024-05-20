@@ -5,6 +5,8 @@
   right: 0;
   padding: 2.7rem 0;
   z-index: 10;
+  opacity: 0;
+  transition: opacity 0.1s cubic-bezier(.17,.67,.68,1.05);
 
   @media (min-width: $stop-scaling) {
     padding: 27px 0;
@@ -19,6 +21,20 @@
   }
 }
 
+.load-body {
+  .page-header {
+    opacity: 1;
+  }
+
+  .page-header__logo {
+    transform: translateX(0);
+  }
+
+  .page-header__nav {
+    transform: translateX(0);
+  }
+}
+
 .page-header__wrapper {
   @include container;
   display: flex;
@@ -27,6 +43,9 @@
 }
 
 .page-header__logo {
+  transform: translateX(-20px);
+  transition: transform 0.1s cubic-bezier(.17,.67,.68,1.05);
+
   @include hover;
   position: relative;
   flex: none;
@@ -130,6 +149,8 @@
 .page-header__nav {
   display: flex;
   align-items: center;
+  transform: translateX(20px);
+  transition: transform 0.1s cubic-bezier(.17,.67,.68,1.05);
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
