@@ -282,9 +282,9 @@
       &::after {
         display: block;
         width: 100%;
-        transform: translateX(0);
+        transform: translateX(-100%);
         opacity: 1;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease;
       }
     }
 
@@ -350,6 +350,12 @@
 .load-body {
   .page-header__nav {
     opacity: 1;
+  }
+
+  .page-header__menu a.active {
+    &::after {
+      transform: translateX(0);
+    }
   }
 
   @media (min-width: $tablet) {
