@@ -66,6 +66,9 @@
     border: 2px solid $c-light;
     z-index: -1;
     transition: width 0.3s ease, height 0.3s ease;
+    animation-name: social;
+    animation-duration: 1s;
+    animation-timing-function: ease;
   }
 
   svg {
@@ -111,6 +114,7 @@
     }
   }
 }
+
 
 .social-block__list {
   @include list-reset;
