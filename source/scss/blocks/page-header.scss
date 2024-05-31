@@ -7,7 +7,7 @@
   z-index: 10;
 
   @media (min-width: $stop-scaling) {
-    padding: 27px 0;
+    padding: 1.7rem 0;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -27,6 +27,12 @@
 }
 
 .page-header__logo {
+  transition: transform 0.1s cubic-bezier(.17,.67,.68,1.05);
+
+  @media (min-width: $tablet) {
+    transform: translateX(-1.25rem);
+  }
+
   @include hover;
   position: relative;
   flex: none;
@@ -130,6 +136,8 @@
 .page-header__nav {
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -274,9 +282,9 @@
       &::after {
         display: block;
         width: 100%;
-        transform: translateX(0);
+        transform: translateX(-100%);
         opacity: 1;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease, transform 0.3s ease;
       }
     }
 
@@ -336,5 +344,24 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     margin-left: 0;
     width: 100%;
+  }
+}
+
+.load-body {
+  .page-header__nav {
+    opacity: 1;
+  }
+
+  .page-header__menu a.active {
+    &::after {
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: $tablet) {
+
+    .page-header__logo {
+      transform: translateX(0);
+    }
   }
 }
