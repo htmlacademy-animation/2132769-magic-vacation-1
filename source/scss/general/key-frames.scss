@@ -16,3 +16,15 @@
     opacity: 1;
   }
 }
+
+@keyframes hideScreen {
+  0% {
+    display: flex;
+  }
+  98% {
+    display: flex;
+  }
+  from {
+    display: none;
+  }
+}
